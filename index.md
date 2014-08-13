@@ -1,0 +1,74 @@
+---
+title       : Predicting Fuel Consumption 
+subtitle    : Developing Data Products Project
+author      : Michalis Christofi
+job         : 
+framework   : revealjs       # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+# Predicting Fuel Consumption
+### Developing Data Products Course
+
+<small> Created by Michalis Christofi </small>
+
+---
+
+## Introduction
+
+* Deciding which car to buy is a difficult process
+* People need to take into account various constraints such as:
+* Price
+* Insurance
+* Safety
+* Fuel Consumption
+
+--- .class #id 
+
+## Further Discussion
+
+* The Fuel Consumption is a significant factor to consider
+* It is associated with the future costs of a car 
+* It is really important to calculate it before buying a car
+* We help you do this
+
+--- .class #id 
+
+## Our Application
+
+* We have developed an application that calculates Miles Per Galon 
+* Our application is based on a prediction model
+* The model was built using data from different types of cars
+* It is a simple and easy way to estimate consumption
+* We only need the weight, horsepower and transmission of the car
+
+--- .class #id 
+
+## Example
+
+* We present our linear model here 
+* Below you can see the code
+* We have also used an example to illustrate our prediction model
+* We have a car which is: Automatic, weights 2000 lb and has a horsepower of 100
+
+
+```r
+data(mtcars)
+fit<-lm(mpg~am+wt+hp,data=mtcars)
+predict(fit,newdata=data.frame(am=0,wt=2,hp=100))
+```
+
+```
+##    1 
+## 24.5
+```
+Our model predicts that this car has an autonomy of 24.4979 miles per galon.
+
+
+
+
+
